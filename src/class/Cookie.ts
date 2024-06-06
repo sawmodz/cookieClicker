@@ -67,7 +67,10 @@ export default class Cookie {
     if (this.secondsData)
       this.secondsData.innerText = parseFloat(
         (
-          this.grandMaUpgrade.getBonus() + this.farmUpgrade.getBonus()
+          this.grandMaUpgrade.getBonus() +
+          this.farmUpgrade.getBonus() +
+          this.mineUpgrade.getBonus() +
+          this.factoryUpgrade.getBonus()
         ).toString()
       ).toFixed(2);
   };
