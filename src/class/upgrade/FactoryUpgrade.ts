@@ -2,7 +2,7 @@ import Upgrade from "../UpgradeInterface.ts";
 import { cookie } from "../../main.ts";
 const upgradeContainer = document.getElementById("upgrade-container");
 
-export default class MineUpgrade implements Upgrade {
+export default class UsineUpgrade implements Upgrade {
   public bonus: number;
   public upgradeBaseCost: number;
   public upgradeMultiplier: number;
@@ -13,8 +13,8 @@ export default class MineUpgrade implements Upgrade {
 
   constructor() {
     this.bonus = 0;
-    this.upgradeBaseCost = 12000;
-    this.realBaseCost = 12000;
+    this.upgradeBaseCost = 130_000;
+    this.realBaseCost = 130_000;
     this.upgradeMultiplier = 1.15;
     this.currentLevel = 0;
     this.upgradeCallback = () => {
@@ -51,7 +51,7 @@ export default class MineUpgrade implements Upgrade {
         this.upgradeBaseCost =
           this.realBaseCost *
           Math.pow(this.upgradeMultiplier, this.currentLevel);
-        this.addBonus(47);
+        this.addBonus(260);
       }
     }
 
@@ -72,12 +72,12 @@ export default class MineUpgrade implements Upgrade {
     upgradeContainer?.insertAdjacentHTML(
       "beforeend",
       `
-    <div class="upgrade-component" id="mine-upgrade">
-      <p class="upgrade-name">⛏️ Mine (niveau ${this.currentLevel})</p>
+    <div class="upgrade-component" id="factory-upgrade">
+      <p class="upgrade-name">🏭 Usine (niveau ${this.currentLevel})</p>
       <p>Augmente la production de cookies de ${parseFloat(
         this.bonus.toString()
       ).toFixed(1)} par secondes</p>
-      <button class="upgrade-button" id="mine-upgrade-button">
+      <button class="upgrade-button" id="factory-upgrade-button">
         Acheter 1 pour ${Math.floor(this.upgradeBaseCost)} cookies
       </button>
     </div>`
@@ -85,11 +85,11 @@ export default class MineUpgrade implements Upgrade {
   };
 
   getIdButton(): string {
-    return "mine-upgrade-button";
+    return "factory-upgrade-button";
   }
 
   refreshBox(): void {
-    const cursorUpgrade = document.getElementById("mine-upgrade");
+    const cursorUpgrade = document.getElementById("factory-upgrade");
     cursorUpgrade?.remove();
     this.showUpgrade();
     this.setButtonHandler();
@@ -103,11 +103,11 @@ export default class MineUpgrade implements Upgrade {
   }
 
   saveAllData(): void {
-    localStorage.setItem("mineUpgrade", JSON.stringify(this));
+    localStorage.setItem("factoryUpgrade", JSON.stringify(this));
   }
 
   loadAllData(): void {
-    const cursorUpgrade = localStorage.getItem("mineUpgrade");
+    const cursorUpgrade = localStorage.getItem("factoryUpgrade");
     if (!cursorUpgrade) return;
 
     const upgrade = JSON.parse(cursorUpgrade);

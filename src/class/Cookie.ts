@@ -2,6 +2,7 @@ import CursorUpgrade from "./upgrade/CursorUpgrade.ts";
 import GrandMaUpgrade from "./upgrade/GrandMaUpgrade.ts";
 import FarmUpgrade from "./upgrade/FarmUpgrade.ts";
 import MineUpgrade from "./upgrade/MineUpgrade.ts";
+import FactoryUpgrade from "./upgrade/FactoryUpgrade.ts";
 import Upgrade from "./UpgradeInterface.ts";
 
 export default class Cookie {
@@ -14,6 +15,7 @@ export default class Cookie {
   public grandMaUpgrade: GrandMaUpgrade;
   public farmUpgrade: FarmUpgrade;
   public mineUpgrade: MineUpgrade;
+  public factoryUpgrade: FactoryUpgrade;
 
   constructor(public count: number, public id: string) {
     this.count = count;
@@ -27,6 +29,7 @@ export default class Cookie {
     this.grandMaUpgrade = new GrandMaUpgrade();
     this.farmUpgrade = new FarmUpgrade();
     this.mineUpgrade = new MineUpgrade();
+    this.factoryUpgrade = new FactoryUpgrade();
 
     this.init();
   }
@@ -75,6 +78,7 @@ export default class Cookie {
       this.grandMaUpgrade,
       this.farmUpgrade,
       this.mineUpgrade,
+      this.factoryUpgrade,
     ];
   }
 
@@ -85,6 +89,7 @@ export default class Cookie {
     this.grandMaUpgrade.saveAllData();
     this.farmUpgrade.saveAllData();
     this.mineUpgrade.saveAllData();
+    this.factoryUpgrade.saveAllData();
   }
 
   loadAllData(): void {
@@ -98,6 +103,7 @@ export default class Cookie {
     this.grandMaUpgrade.loadAllData();
     this.farmUpgrade.loadAllData();
     this.mineUpgrade.loadAllData();
+    this.factoryUpgrade.loadAllData();
 
     this.refreshUi();
   }
