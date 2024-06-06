@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/images/cookie.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cookie Clicker</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="cookie-container">
+        <img
+          class="cookie-image"
+          id="cookie-image"
+          src="/images/cookie.png"
+          alt="Cookie"
+        />
+      </div>
+      <div class="other-container">
+        <div class="cookie-count">
+          Cookie : <span id="cookie-count">0</span> 🍪 (
+          <span id="clique-data">0</span>🍪 / Clique |
+          <span id="seconds-data">0</span>🍪 / Secondes)
+        </div>
+        <div class="upgrade-container" id="upgrade-container"></div>
+      </div>
+    </div>
+
+    <div class="loadData">
+      <button class="save-button" id="save">Save</button>
+      <button class="save-button" id="load">Load</button>
+      <button class="save-button" id="reset">Reset</button>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

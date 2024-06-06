@@ -1,0 +1,113 @@
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f0f0f0;
+  width: 100%;
+}
+
+#app {
+  display: flex;
+  height: 100vh;
+  background-color: #f0f0f0;
+  width: 100%;
+}
+
+.cookie-container {
+  height: 100%;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid #d3d3d3;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.other-container {
+  height: 100%;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.cookie-image {
+  width: 500px;
+  height: 500px;
+  transition: all 0.1s;
+}
+
+.cookie-image:hover {
+  cursor: pointer;
+}
+
+.upgrade-container {
+  height: 100%;
+  margin: 10px;
+}
+
+.cookie-count {
+  font-size: 24px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.upgrade-component {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.upgrade-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.upgrade-button {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  border: 1px solid #d3d3d3;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.upgrade-button:hover {
+  cursor: pointer;
+}
+
+.cookie-clicked {
+  transition: all 0.1s;
+  transform: scale(1.1) !important;
+}
+
+.loadData {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  border: 1px solid #d3d3d3;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.save-button {
+  bottom: 10px;
+  right: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  border: 1px solid #d3d3d3;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.save-button:hover {
+  cursor: pointer;
+}
